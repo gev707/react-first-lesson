@@ -1,9 +1,10 @@
 
-export default  () => (
+export default  (props) => (
     <div className='carHolder'>
-        <h2>This is Car Component</h2>
-        <p>Car Name: <strong>{'BMW'}</strong></p>
-        <p>Car Color: <strong>{'Black'}</strong></p>
-        <p>Car Year: <strong>{2010}</strong></p>
+        <div>
+            <p>Car Name: <strong>{props.name}</strong></p>
+            <p>Car Color: <strong>{props.color}</strong></p>
+            <p>Car Year: <strong>{props.year}</strong></p>
+        </div>
     </div>
-);
+)

@@ -1,42 +1,65 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+h1 {
+  color:rgba(44, 116, 184, 0.788);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2{
+  color:rgba(44, 116, 184, 0.788);
 }
 .carHolder {
-  background-color: #282c34;
   color: #61dafb;
+  padding: 0 1rem;
+}
+.userHolder {
+  background: rgba(37, 71, 102, 0.788);
+  text-align: start;
+  color: #fff;
+  width:100%;
+}
+.userHolder div {
+  display: flex;
+  justify-content: center;
+}
+.userHolder div p{
+  padding-left: 2rem;
+}
+.d-flex {
+  display: flex;
+}
+.justify-content-around{
+  justify-content: space-around;
+}
+.cardHolder {
+  width:100%;
+  height: auto;
+  margin: 2rem 0;
+}
+.cards{
+  width: 350px;
+  height: auto;
+  background: #282c34;
+  color: #61dafbbe;
+  border-bottom: 2px solid #61dafb;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #070707c9;
+  border-top :2px solid #61dafb;
+  overflow: hidden;
+}
+.cards img{
+  padding-top: 5px;
+  width: 100%;
+  height: auto;
+}
+.cards.active {
+  background: #1fa04a !important;
+  color: #fff;
 }
