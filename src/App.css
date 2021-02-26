@@ -54,12 +54,85 @@ h2{
   border-top :2px solid #61dafb;
   overflow: hidden;
 }
+.cards:hover .cardImg{
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
 .cards img{
   padding-top: 5px;
   width: 100%;
   height: auto;
+  transition: all 0.5s ease;
 }
 .cards.active {
   background: #1fa04a !important;
   color: #fff;
+}
+.sliderTitle {
+  background: #363e4d;
+  font-size: 5rem;
+}
+.sliderHolder{
+    display: flex;
+    width: 1170px;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+.slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display:none;
+}
+.slider.active {
+  display: block;
+}
+h1{
+  background: #363e4d;
+  font-size: 3rem;
+  padding: 1rem;
+}
+.figure {
+  width:100%;
+  height:auto;
+  overflow: hidden;
+}
+.dark{
+  background: #282c34;
+  transition: all 0.5s ease-in-out;
+}
+.ligth{
+  background: #61dafb;
+  color:#282c34 !important;
+  transition: all 0.5s ease-in-out;
+}
+.btnHolder{
+  display: block;
+  width:1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height:30vh;
+  position: relative;
+  background: #fff;
+}
+.btnHolder button {
+  position: absolute;
+  top:5px;
+  right:5px;
+  width:120px;
+  height: 50px;
+  color: #61dafb;
+  border:none;
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px black;
+  outline: none;
+};
+
+.position-relative {
+  position: relative;
+}
+.btnHolder.btn-light{
+  background: #000;
 }
