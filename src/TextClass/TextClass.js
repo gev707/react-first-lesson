@@ -19,6 +19,7 @@ class Show extends React.Component {
                     onClick={this.toggleSwitch}>
                     {this.state.isOn?'Switch On !':'Switch Off !'}
                     </button>
+                
                     </div>
                 </div>
             </div>
