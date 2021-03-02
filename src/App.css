@@ -24,7 +24,7 @@ h2{
 h1{
   display: inline-block;
   color:rgba(44, 116, 184, 0.788);
-  background: #363e4d;
+  box-shadow: 2px 2px 20px rgb(0 0 0 / 10%);
   font-size: 2.5em;
   padding: 1rem;
 }
@@ -32,40 +32,7 @@ h1{
   border:2px solid red;
   color: #fff;
 }
-.inputHolder {
-  display: flex;
-  justify-content: flex-end;
-  height: auto;
-  background: linear-gradient( rgb(216, 100, 206) , rgb(49, 48, 104));
-  padding: 10px;
-  margin: 0 1rem;
-}
-.inputHolder  input{
-  width: 250px;
-  height:15px;
-  padding: 10px;
-  border: none;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  margin-right: 5px;
-}
-.inputHolder  button{
-  background:#638491;
-  border: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  outline: none;
-  color: #fff;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease-in;
-}
-.inputHolder:hover  button{
-  background:#305563;
-  transition: all 0.3s ease-in;
-  
-}
+
 .menu {
   display: flex;
   align-items: center;

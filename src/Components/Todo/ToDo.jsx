@@ -1,10 +1,10 @@
 import React from "react";
-import AddTask from "./AddTask";
-
+import AddTask from "../AddTask/AddTask";
+import Task from '../Tasks/Task';
+import styles from "./todo.module.css";
 class Todo extends React.Component {
     state = {
         tasks: ['task 1', 'task 2', 'task 3'],
-        inputValue: ''
     };
     addTask = (inputValue) => {
         const task = [...this.state.tasks];
@@ -19,14 +19,18 @@ class Todo extends React.Component {
     }
 
     render() {
-        const tasks = this.state.tasks.map(function (item, index) {
-            return <p key={index}>{item}</p>
+        const tasks = this.state.tasks.map(function (task, index) {
+            return <Task
+                task={task}
+                key={index}
+                active={index==0}
+            />
         })
         return (
             <div>
                 <div>
                     <AddTask addTask={this.addTask} />
-                    <div className='textHolder d-flex'>
+                    <div className={styles.textHolder} >
                         {tasks}
                     </div>
                 </div>
