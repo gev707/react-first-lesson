@@ -31,7 +31,7 @@ class Price extends Component {
                 <p>Price - {this.state.price}</p>
                 <button
                     onClick={this.handleRate}
-                    className='btn'>
+                    className='btn-product'>
                     Change current rate
                 </button>
             </>

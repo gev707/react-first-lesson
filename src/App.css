@@ -81,7 +81,7 @@ h1{
 .menu p ,h2{
  margin: 0;
 }
-.btn {
+.btn-product {
   margin-left: 25px;
   background: #283048;
   color: #fff;
@@ -91,4 +91,7 @@ h1{
 }
 .product{
   padding-block-end: 1rem;
+}
+.textHolder {
+  justify-content: space-around;
 }
