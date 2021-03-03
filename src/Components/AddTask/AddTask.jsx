@@ -5,18 +5,26 @@ class AddTask extends React.Component {
     state = {
         inputValue: ''
     }
-    handleChangeInputvalue = (event) => {
-        const { value } = event.target;
+    handleChangeInputValue = (event) => {
+        const { value } = event.target
         this.setState({
             inputValue: value
         })
     };
-
+    handleEnter = (event) => {
+        if (event.key === 'Enter') {
+            this.props.addTask(this.state.inputValue);
+            this.setState({
+                inputValue: ''
+            });
+        }
+    }
     handleSubmit = () => {
         this.props.addTask(this.state.inputValue);
         this.setState({
             inputValue: ''
         })
+
     };
 
     render() {
@@ -26,13 +34,14 @@ class AddTask extends React.Component {
                     <input
                         type="text"
                         placeholder='Add some text'
-                        onChange={this.handleChangeInputvalue}
+                        onChange={this.handleChangeInputValue}
+                        onKeyPress={this.handleEnter}
                         value={this.state.inputValue}
                     />
                     <button
                         onClick={this.handleSubmit}>
                         Add Text
-                        </button>
+                    </button>
                 </div>
             </div>
         )

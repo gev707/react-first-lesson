@@ -1,7 +1,9 @@
 import React from "react";
 import AddTask from "../AddTask/AddTask";
 import Task from '../Tasks/Task';
+import { Container, Row, Col } from 'react-bootstrap';
 import styles from "./todo.module.css";
+
 class Todo extends React.Component {
     state = {
         tasks: ['task 1', 'task 2', 'task 3'],
@@ -23,17 +25,26 @@ class Todo extends React.Component {
             return <Task
                 task={task}
                 key={index}
-                active={index==0}
+                active={index == 0}
             />
         })
         return (
             <div>
-                <div>
-                    <AddTask addTask={this.addTask} />
-                    <div className={styles.textHolder} >
-                        {tasks}
-                    </div>
-                </div>
+                <Container fluid={true}>
+                    <Row>
+                        <Col>
+                            <AddTask addTask={this.addTask} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <div className={styles.textHolder} >
+                                {tasks}
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+
             </div>
         )
     }
