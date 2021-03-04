@@ -1,0 +1,53 @@
+.taskHolder {
+    position: relative;
+    display: block;
+    width:250px;
+    height:250px;
+    box-shadow: 2px 5px 20px rgb(255 255 255 / 25%);
+    text-shadow: 1px 1px rgb(250 250 250 / 25%);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding:1rem 0 ;
+    margin: 1rem ;
+    -webkit-text-fill-color: transparent;
+    word-break: break-all;
+}
+.check{
+    position: absolute;
+    top:5px;
+    left:5px;
+    
+}
+.taskFlex{
+    display: flex !important;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.taskHolder svg{
+    font-size: 2rem;
+    cursor: pointer;
+    font-size: 25px;
+    color: rgb(78, 99, 124);
+    transition:all 0.3s ease;
+}
+.taskHolder svg:last-child{
+    margin-left: 10px;
+    font-size: 27px;
+}
+.taskHolder svg:hover{
+    font-size: 2rem;
+    cursor: pointer;
+    font-size: 25px;
+    color: rgb(21, 41, 68);
+    transition:all 0.3s ease;
+}
+.taskHolder input[type="checkbox"] {
+    display: block;
+    opacity: 0.3;
+ }
+input[type="checkbox"]:checked {
+    opacity: 1;
+}

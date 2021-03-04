@@ -1,47 +1,103 @@
 .textHolder {
     display: flex;
     justify-content: space-around;
-    margin-top: 4rem;
+    flex-wrap:wrap;
+    margin: 4rem 0;
 }
 .inputHolder {
-    display: flex;
-    justify-content: flex-end;
-    height: auto;
-    box-shadow: 2px 2px 20px rgb(255 255 255 / 10%);
-    padding: 10px;
-    margin:2rem;
+  display: flex;
+  justify-content: flex-end;
+  height: auto;
+  box-shadow: 2px 2px 20px rgb(255 255 255 / 10%);
+  padding: 10px;
+  margin:2rem;
+}
+.inputHolder  input{
+  width:250px;
+  height:32px;
+  padding: 10px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-right: 5px;
+  outline: none;
+  background: transparent;
+  box-shadow: -3px 0px 2px rgb(255 255 255 / 50%);
+  transition: all 1s ease-out;
+}
+.inputHolder  button{
+  box-shadow: 3px 0px 2px rgb(255 255 255 / 50%);
+  background: none;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline: none;
+  color: rgb(99, 138, 185);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.inputHolder:hover  button{
+  background:#305563;
+  transition: all 0.3s ease-out;
+}
+.inputHolder:hover   input{
+  width: 450px !important;
+  background:#305563;
+  color: aliceblue;
+  transition: width 2.5s;
+}
+.d-flex {
+  display: flex;
+}
+.justify-content-around{
+  justify-content: space-around;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  width:100%;
+}
+.col {
+  width:100%;
+}
+@media screen and (min-width: 1200px){
+  .container {
+    max-width: 1170px;
   }
-  .inputHolder  input{
-    width: 250px;
-    height:32px;
-    padding: 10px;
-    border: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    margin-right: 5px;
-    outline: none;
+  .col{
+    width:33.333% !important;
   }
-  .inputHolder  button{
-    box-shadow: 2px 2px 10px rgb(0 0 0 / 30%);
-    background: none;
-    border: none;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    outline: none;
-    color: #fff;
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease-in;
+}
+
+@media  screen and (min-width: 992px){
+  .container {
+    max-width: 960px;
   }
-  .inputHolder:hover  button{
-    background:#305563;
-    transition: all 0.3s ease-in;
-    
+  .col{
+    width:33.333% !important;
   }
-  .d-flex {
-    display: flex;
+}
+@media screen and (min-width: 768px){
+  .container {
+    max-width: 720px;
   }
-  .justify-content-around{
-    justify-content: space-around;
+  .col{
+    width:50% !important;
   }
+  
+}
+
+@media (min-width: 320px){
+  .container {
+    max-width: 100%;
+  } 
+ 
+}

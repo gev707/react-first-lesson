@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../Todo/todo.module.css'
+import styles from '../todo.module.css'
 
 class AddTask extends React.Component {
     state = {
@@ -12,21 +12,14 @@ class AddTask extends React.Component {
         })
     };
     handleEnter = (event) => {
-        if (event.key === 'Enter') {
+        this.handleSubmit = () => {
             this.props.addTask(this.state.inputValue);
             this.setState({
                 inputValue: ''
-            });
-        }
+            })
+        };
+        if (event.key === 'Enter') this.handleSubmit()
     }
-    handleSubmit = () => {
-        this.props.addTask(this.state.inputValue);
-        this.setState({
-            inputValue: ''
-        })
-
-    };
-
     render() {
         return (
             <div>
