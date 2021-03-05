@@ -1,6 +1,6 @@
 import React from "react";
 import styles from '../todo.module.css'
-
+import {Button} from 'react-bootstrap'
 class AddTask extends React.Component {
     state = {
         inputValue: ''
@@ -20,21 +20,42 @@ class AddTask extends React.Component {
         };
         if (event.key === 'Enter') this.handleSubmit()
     }
+    handleDeleteCheckedTasks = () => {
+        this.props.deleteCheckedTasks()
+    }
     render() {
+        const {isChecked} =this.props
         return (
             <div>
                 <div className={styles.inputHolder}>
-                    <input
-                        type="text"
-                        placeholder='Add some text'
-                        onChange={this.handleChangeInputValue}
-                        onKeyPress={this.handleEnter}
-                        value={this.state.inputValue}
-                    />
-                    <button
-                        onClick={this.handleSubmit}>
-                        Add Text
+                    <div>
+                        <button 
+                            onClick={this.handleDeleteCheckedTasks}
+                            className={styles.btnDeleteAll}
+                            disabled={!!!this.props.checkedTasks.size}
+                        >
+                            Delete All
+                        </button>
+                    </div>
+                    <div>
+                        <input
+                            className={styles.inputItem}
+                            type="text"
+                            placeholder='Add some text'
+                            onChange={this.handleChangeInputValue}
+                            onKeyPress={this.handleEnter}
+                            value={this.state.inputValue}
+                            disabled={isChecked}
+                        />
+                        <button
+                            className={styles.btnAdd}
+                            onClick={this.handleSubmit}
+                            disabled={isChecked}
+                        >
+                            Add Text
+                            
                     </button>
+                    </div>
                 </div>
             </div>
         )

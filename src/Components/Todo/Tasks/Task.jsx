@@ -1,22 +1,41 @@
 import styles from "./task.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt,faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
 
-const Task = ({ task,deleteTask }) => {
-    const handleDeleteTask =(e)=>{
+const Task = ({ task, deleteTask, handleToggleCheckTasks, isChecked }) => {
+    const handleDeleteTask = (e) => {
         deleteTask(task._id)
     }
+    const handleToggleCheck = (e) => {
+        handleToggleCheckTasks(task._id)
+    }
     return (
-        <div className={styles.taskHolder}>
-            <input className={styles.check} type='checkbox' />
+        <div className={!isChecked ? styles.taskHolder : styles.tasks}>
+            <input
+                className={styles.check}
+                type='checkbox'
+                onClick={handleToggleCheck}
+            />
             <div className={styles.taskFlex}>
                 <p>{task.text}</p>
                 <div>
-                    <FontAwesomeIcon onClick={handleDeleteTask} icon={faTrashAlt} />
-                    <FontAwesomeIcon icon={faEdit} />
+                    <button disabled={isChecked}>
+                        <FontAwesomeIcon
+                            onClick={handleDeleteTask}
+                            icon={faTrashAlt}
+                            
+                        />
+                    </button>
+                    <button disabled={isChecked}>
+                        <FontAwesomeIcon
+                            icon={faEdit}
+                            
+                        />
+                    </button>
                 </div>
+                
             </div>
-    </div>        
+        </div>
     )
 }
 
